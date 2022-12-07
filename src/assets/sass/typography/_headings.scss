@@ -1,0 +1,134 @@
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $heading-color;
+  font-weight: $font-weight-heading;
+  line-height: $line-height-base;
+  font-family: $heading-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include media_575(min) {
+    letter-spacing: 2px;
+  }
+
+}
+
+/* ----------------------------------------------------------------
+	Basic Layout Styles
+-----------------------------------------------------------------*/
+
+h1, .h1 {
+  font-size: $font-size-h1;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+}
+
+.border-line-left {
+  @include media_991(min) {
+    position: relative;
+    &::before {
+      content: "";
+      height: 1px;
+      background: $heading-color;
+      position: absolute;
+      transform: translateX(-100%);
+      left: -25px;
+      right: auto;
+      width: 100px;
+      top: 50%;
+    }
+  }
+}
+
+.title-heading {
+  font-size: var(--title-heading);
+  line-height: var(--title-heading);
+}
+
+.title-section {
+  font-size: var(--title-section);
+  line-height: var(--title-section);
+  letter-spacing: 0.01em;
+}
+
+.sm-title-block {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.section-heading {
+
+  @include media_991(min) {
+    margin-bottom: 70px;
+  }
+  @include media_991 {
+    margin-bottom: 50px;
+  }
+
+  .title-sub {
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 70px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+
+    &:before {
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background-color: $heading-color;
+      border-radius: 50%;
+    }
+
+
+    &:after {
+      left: 5px;
+      height: 1px;
+      width: 55px;
+      background: $border-color;
+
+    }
+
+    + .title-section {
+      margin-top: 20px;
+    }
+  }
+
+}
+
+.title-block {
+  letter-spacing: 2.5px;
+  font-size: var(--title-block);
+  font-weight: 600;
+}

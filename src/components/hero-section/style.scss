@@ -1,0 +1,88 @@
+@import "../../assets/sass/helper";
+
+.hero-section {
+
+    @include media_991(min){
+
+        .title-section {
+            text-align: right;
+            margin-right: -70px;
+            margin-bottom: 40px;
+        }
+        p {
+            max-width: 370px;
+        }
+        .box-img {
+            height: 100%;
+        }
+        .col-lg-8{
+            padding-right: 0;
+            margin-top: 0;
+        }
+    }
+
+    @include media_768(){
+        --number-size : 80px;
+    }
+
+    .box-text {
+        position: relative;
+        z-index: 1;
+
+
+
+        .sm-title-block {
+            position: relative;
+            text-transform: uppercase;
+            width: max-content;
+            padding-right: 80px;
+
+
+
+
+            &:before , &:after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+            }
+            &::before {
+                right: 0;
+                width: 5px;
+                height: 5px;
+                background-color: $heading-color;
+                border-radius: 50%;
+            }
+
+            &::after {
+                display: block;
+                right: 15px;
+                height: 1px;
+                width: 52px;
+                background: rgba(233, 233, 233, 0.1);
+            }
+        }
+
+        .auth-position {
+            font-size: 14px;
+        }
+
+        .experience {
+            display: flex;
+            align-items: center;
+            
+            .number {
+                color: $heading-color;
+                font-size: var(--number-size , 120px);
+                line-height: 90px;
+                font-weight: bold;
+                margin-right: 20px;
+            }
+
+        }
+    }
+
+
+
+}

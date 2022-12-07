@@ -1,0 +1,52 @@
+@import "../../assets/sass/helper";
+
+.box-right-seat {
+  position: relative;
+
+
+  .box-text {
+    .inner-box {
+      padding: $box-padding ;
+      @include media_991() {
+        position: relative;
+        background-color: $assistant-color;
+      }
+    }
+
+    > * {
+      z-index: 2;
+    }
+
+    @include media_991(min) {
+      --bs-gutter-x: 25px;
+      position: absolute;
+      max-width: 600px;
+      right: 80px;
+      bottom: -80px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-content: center;
+      height: 100%;
+      top: 0;
+      text-align: left;
+      &:before {
+        background: $bg-color;
+      }
+    }
+
+
+    @include media_991() {
+      position: relative;
+      margin-top: -60px;
+      &:before {
+        display: none;
+      }
+    }
+    @include media_575() {
+      margin-top: -25px;
+    }
+
+  }
+
+}

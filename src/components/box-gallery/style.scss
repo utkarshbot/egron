@@ -1,0 +1,72 @@
+@import "../../assets/sass/helper";
+
+.dsn-box-gallery .item-box {
+  position: relative;
+  @include media_991(min) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @include media_768X991() {
+    padding: 40px 40px 40px 60px;
+  }
+  @include media_768() {
+    padding: 80px;
+  }
+
+  &:nth-child(odd) {
+    background-color: $assistant-color;
+  }
+
+  .image-zoom {
+    cursor: pointer;
+    user-select: none;
+
+    img {
+      height: auto;
+      max-height: 80vh;
+      pointer-events: auto;
+    }
+  }
+
+
+  .caption {
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    color: $body-color;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+
+.box-im {
+  position: relative;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @include media_991 {
+    padding: 40px 40px 40px 60px;
+  }
+
+  @include media_768 {
+    padding: 80px;
+    .caption {
+      left: 20px;
+    }
+  }
+
+  @include media_575 {
+    .caption {
+      left: -20px;
+    }
+  }
+
+
+  .image-zoom {
+    position: relative;
+  }
+}

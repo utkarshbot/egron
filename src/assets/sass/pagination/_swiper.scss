@@ -1,0 +1,25 @@
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  position: relative;
+  bottom: auto;
+  margin-top: 15px;
+  --swiper-pagination-color: $heading-color;
+
+}
+
+
+
+
+
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 2px;
+  border-radius: 0;
+  margin-right: 5px;
+  cursor: pointer;
+  background: $heading-color;
+  transition: transform 0.3s ease-in-out;
+  &.swiper-pagination-bullet-active{
+    width: 30px;
+  }
+}

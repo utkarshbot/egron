@@ -1,0 +1,62 @@
+@import "../../assets/sass/helper";
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  z-index: 10;
+  //pointer-events: none;
+  transition-property: background-color, padding-top, padding-bottom, transform;
+  transition-duration: 0.5s;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .main-logo {
+    position: relative;
+    z-index: 1;
+  }
+
+  ul.primary-nav {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+
+
+    ul {
+      position: absolute;
+
+    }
+
+
+  }
+
+
+  @include media_991(min) {
+    &:not(.dsn-hamburger) {
+      @import "menu/classic";
+
+      .menu-cover-title {
+        display: none;
+      }
+    }
+  }
+
+
+  &.dsn-hamburger {
+    @import "menu/hamburger";
+  }
+
+  &.nav-bg{
+      background-color: $bg-color;
+  }
+  &.hide-nav:not(.dsn-open){
+    transform: translateY(-100%);
+  }
+
+}

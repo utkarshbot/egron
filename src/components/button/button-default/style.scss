@@ -1,0 +1,40 @@
+@import "../../../assets/sass/helper";
+
+.btn-default {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 25px;
+    border: 1px solid $border-color;
+    border-radius: 30px;
+    color: $heading-color;
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $heading-color;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+
+        svg {
+            width: 6px;
+
+            path {
+                fill: $bg-color;
+            }
+        }
+    }
+
+    .text {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 4px;
+    }
+
+    &:hover {
+        color: $heading-color;
+    }
+}

@@ -1,0 +1,10 @@
+.scrollbar-track {
+  background: none !important;
+  width: 4px !important;
+  z-index: 11;
+
+  .scrollbar-thumb {
+    background: #424242;
+    width: 4px;
+  }
+}

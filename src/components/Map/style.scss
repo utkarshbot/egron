@@ -1,0 +1,23 @@
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 40px;
+  background-color: #000;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  &:hover {
+    z-index: 1;
+  }
+}
+
+@keyframes bounce {
+  0%   { transform: translate(-50%, -50%) }
+  50%  { transform: translate(-50% , calc(-50% - 10px)) }
+  100% { transform: translate(-50%, -50%)}
+}

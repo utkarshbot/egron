@@ -1,0 +1,78 @@
+@import "../../assets/sass/helper";
+
+.dsn-services {
+
+
+  .service-item{
+    position: relative;
+
+  }
+
+  &.service-one .service-item {
+
+    @include media_991(min) {
+      padding: 50px 45px;
+    }
+    @include media_991() {
+      padding: 30px 20px;
+    }
+    @include media_768(min) {
+      &:nth-of-type(even) {
+        background: $assistant-color;
+        box-shadow: 15px 15px 30px rgb(0 0 0 / 30%);
+      }
+    }
+    @include media_768() {
+      background: $assistant-color;
+      box-shadow: 15px 15px 30px rgb(0 0 0 / 30%);
+
+    }
+
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+    }
+
+    &:after {
+      right: 0;
+      bottom: 0;
+      border-bottom: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+    }
+
+    .icon {
+      svg, img {
+        height: 45px;
+      }
+    }
+
+    p {
+      max-width: 500px;
+    }
+  }
+
+  &.service-tow {
+    p{
+      max-width: 450px;
+    }
+    .line-before {
+      width: 40px;
+      height: 2px;
+      background-color: $heading-color;
+      opacity: 0.5;
+    }
+  }
+}
+
+

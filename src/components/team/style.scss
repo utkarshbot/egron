@@ -1,0 +1,58 @@
+@import "../../assets/sass/helper";
+
+.team-item {
+    position: relative;
+
+    .box-img {
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        img {
+            transform: scale(1.095);
+            transition: 1s cubic-bezier(0.645, 0, 0.355, 1);
+        }
+    }
+
+    .box-content {
+        position: relative;
+        z-index: 1;
+
+        h5 {
+            letter-spacing: -1px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            word-spacing: 8px;
+            transition: 1s cubic-bezier(0.645, 0, 0.355, 1);
+        }
+
+        h6 {
+            color: $body-color;
+            letter-spacing: 1.5px;
+            font-family: $body-font;
+            font-size: 14px;
+            transition: 1.2s cubic-bezier(0.645, 0, 0.355, 1);
+        }
+    }
+
+    &:hover {
+        .box-img {
+            img {
+                transform: scale(1);
+                -webkit-filter: blur(3px);
+                filter: blur(3px);
+            }
+        }
+
+        .box-content {
+            h5 {
+                transform: translateX(20px);
+            }
+
+            h6 {
+                transform: translateX(20px);
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.cover-section {
+  width: 100%;
+
+  .title-cover {
+    position: absolute;
+    width: 100%;
+    font-size: 8vw;
+    font-weight: 600;
+    opacity: 0.12;
+    z-index: 1;
+    text-transform: uppercase;
+    pointer-events: none;
+    will-change: trnsform, opacity;
+  }
+}

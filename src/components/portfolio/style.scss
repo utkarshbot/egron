@@ -1,0 +1,150 @@
+@import "../../assets/sass/helper";
+
+
+@include media_768(min) {
+  .dsn-portfolio.port-classic .portfolio-item:nth-of-type(2) {
+    margin-top: calc(var(--dsn-row-item, 0px) + 80px);
+  }
+}
+
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+
+
+  .inner-img {
+    height: 70vh;
+  }
+
+  .port-classic & .inner-img {
+    height: 80vh;
+  }
+
+
+  .item-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.6s, background-color 0.6s cubic-bezier(0.08, 0.03, 0.22, 0.87), -webkit-transform 0.6s;
+    z-index: 1;
+  }
+
+  .info-text {
+    position: absolute;
+    left: 50%;
+    padding: 25px 15px 30px;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.08, 0.03, 0.22, 0.87),
+      -webkit-transform 0.5s cubic-bezier(0.08, 0.03, 0.22, 0.87);
+    z-index: 2;
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%, 10px);
+
+    .btn-portfolio {
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $body-color;
+
+    }
+  }
+
+  &:hover {
+    .info-text {
+      transform: translate(-50%, -15px) scale(1.05);
+
+      .btn-portfolio {
+        opacity: 1;
+      }
+    }
+
+    .item-border {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+.dsn-filtering {
+  position: relative;
+  z-index: 2;
+
+
+  .filtering-wrap {
+    width: inherit;
+    position: relative;
+    border-bottom: 2px solid $assistant-color;
+    margin: auto;
+    text-align: center;
+
+    @include media_575 {
+      border-bottom: 0;
+    }
+
+
+    .filtering {
+      overflow: auto;
+      position: relative;
+      margin-bottom: -2px;
+
+      button {
+        color: $heading-color;
+        width: auto;
+        margin: 0 30px 0 0;
+        padding: 0 5px 18px 5px;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        transition-duration: 0.6s;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background-color: inherit;
+
+        &:before {
+          display: none;
+        }
+
+        @include media_575 {
+          margin-right: 10px;
+
+        }
+
+
+        &.active {
+          font-weight: bold;
+          border-bottom: solid 2px $heading-color;
+        }
+      }
+    }
+  }
+
+
+}
+
+.myFilteringStyle {
+  border-bottom: 1px solid black !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.myFilteringStyle button {
+  transition: 0.3s ease !important;
+  background-color: #f9f9f9 !important;
+  border-bottom: 2px solid transparent;
+}
+
+.myFilteringStyle button.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}

@@ -1,0 +1,231 @@
+//---> Margin Helper
+@include MarginPadding(20, 5, ".m", margin);
+@include MarginPadding(20, 5, ".mt", margin-top);
+@include MarginPadding(20, 5, ".mb", margin-bottom);
+.mr-10 {
+  margin-right: 10px;
+}
+
+//---> Padding
+@include MarginPadding(20, 5, ".p", padding);
+@include MarginPadding(20, 5, ".pt", padding-top);
+@include MarginPadding(20, 5, ".pb", padding-bottom);
+
+@include helperClass(0, 10, 1, '.z-index', 'z-index', '');
+
+//---> Middle Element
+.v-middle {
+  @include middle;
+}
+
+.v-middle-horizontal {
+  @include middle(true, false);
+}
+
+.v-middle-vertical {
+  @include middle(false);
+}
+
+
+.dsn-grid-layout {
+
+
+  @include media_991(min) {
+    --dsn-width-item: var(--dsn-col-number, 1);
+    --dsn-col-item: var(--dsn-col-gap, 30px);
+    --dsn-row-item: var(--dsn-row-gap, 30px);
+  }
+  @include media_768X991 {
+    --dsn-width-item: var(--dsn-col-number-tablet, var(--dsn-col-number, 1));
+    --dsn-col-item: var(--dsn-col-gap-tablet, var(--dsn-col-gap, 30px));
+    --dsn-row-item: var(--dsn-row-gap-tablet, var(--dsn-row-gap, 30px));
+  }
+  @include media_768() {
+    --dsn-width-item: var(--dsn-col-number-mobile, var(--dsn-col-number-tablet, 1));
+    --dsn-col-item: var(--dsn-col-gap-mobile, var(--dsn-col-gap-tablet, var(--dsn-col-gap, 30px)));
+    --dsn-row-item: var(--dsn-row-gap-mobile, var(--dsn-row-gap-tablet, var(--dsn-row-gap, 30px)));
+  }
+
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--dsn-col-item));
+  margin-top: calc(-1 * var(--dsn-row-item));
+
+  @include media_575() {
+    --dsn-width-item: 1 !important;
+  }
+
+  > *:not(.cover-section):not(.p-absolute) {
+    flex: 0 0 calc((100% / var(--dsn-width-item)) - var(--dsn-col-item));
+    margin-left: var(--dsn-col-item);
+    margin-top: var(--dsn-row-item);
+  }
+
+
+  &.full-width-last-item:not(.dsn-isotope) > * {
+    flex-grow: 1;
+  }
+
+  &:not(.full-width-last-item) > * {
+    max-width: calc((100% / var(--dsn-width-item)) - var(--dsn-col-item));
+    width: 100%;
+  }
+}
+
+
+.mt-section {
+  margin-top: $margin-padding;
+}
+
+.mb-section {
+  margin-bottom: $margin-padding;
+}
+
+.section-margin {
+  margin-top: $margin-padding;
+  margin-bottom: $margin-padding;
+}
+
+.pt-section {
+  padding-top: $margin-padding;
+}
+
+.pb-section {
+  padding-bottom: $margin-padding;
+}
+
+.section-padding {
+  padding-top: $margin-padding;
+  padding-bottom: $margin-padding;
+}
+
+.box-padding {
+  padding: $box-padding;
+}
+
+@include overlays(10);
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+.overflow {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-main {
+  background-color: $bg-color;
+}
+
+.background-section {
+  background-color: $assistant-color;
+}
+
+
+.color-heading {
+  color: $heading-color;
+}
+
+.color-body {
+  color: $body-color;
+}
+
+.dsn-auto {
+  .text-center & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-left & {
+    margin-right: auto;
+  }
+
+  .text-right & {
+    margin-left: auto;
+  }
+}
+
+.m-w750 {
+  max-width: 750px;
+}
+
+.m-w570 {
+  max-width: 570px;
+}
+
+.m-w500 {
+  max-width: 500px;
+}
+
+
+.container {
+  @include media_991() {
+    max-width: 100%;
+  }
+
+}
+
+.dsn-left-container, .dsn-right-container {
+
+
+  @include media_991(min) {
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+
+      > *:first-child {
+        padding-left: calc(var(--bs-gutter-x) * 0.25);
+      }
+    }
+
+    max-width: 100%;
+    width: calc(100% - ((100vw - 960px + var(--bs-gutter-x)) / 2));
+    padding-right: 0;
+    padding-left: 0;
+
+    &.dsn-left-container {
+      margin-right: auto;
+      margin-left: 0;
+    }
+    &.dsn-right-container {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+  @include media_1400(min) {
+    width: calc(100% - ((100vw - 1320px + var(--bs-gutter-x)) / 2));
+  }
+  @include media_1200X1400{
+    width: calc(100% - ((100vw - 1140px + var(--bs-gutter-x)) / 2));
+  }
+
+
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}

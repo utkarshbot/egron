@@ -1,0 +1,161 @@
+@import "../../assets/sass/helper";
+
+.dsn-testimonial {
+
+  .content-box {
+    position: relative;
+    line-height: 100%;
+  }
+
+  .testimonial-item {
+
+
+    .author-box {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .avatar {
+        @include media_575(min) {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+          img {
+            border-radius: 50%;
+          }
+
+          & + h5 {
+            margin-left: 15px;
+          }
+        }
+        @include media_575() {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.testimonial-one {
+    padding: var(--padding-inner);
+    @include media_768(min) {
+      --pading-box: 60px 0 60px 20px;
+      --padding-inner: 0 35px;
+      --bottom-q: -40px;
+
+      .testimonial-inner {
+        display: flex;
+
+        .title-box {
+          width: 40%;
+        }
+
+        .content-box {
+          width: 60%;
+        }
+      }
+
+    }
+    @include media_768() {
+      --padding-inner: var(--box-padding);
+      --bottom-q: calc(-35px - var(--box-padding));
+      --pading-box: 30px 0 0;
+      p.mb-30 {
+        margin-bottom: 20px;
+      }
+    }
+    @include media_575(){
+      --bottom-q: -74px;
+
+    }
+
+    p {
+      font-size: 18px;
+      font-style: italic;
+      letter-spacing: 1.5px;
+      line-height: 1.5;
+    }
+
+    .content-box {
+      padding: var(--pading-box);
+      .author-box h5 {
+        position: relative;
+        font-size: 17px;
+        font-weight: 500;
+        font-family: $heading-font;
+        color: $heading-color;
+        letter-spacing: 2px;
+      }
+      &::before {
+        content: "”";
+        right: 30px;
+        bottom: var(--bottom-q);
+        position: absolute;
+        font-size: 150px;
+        font-weight: bold;
+        color: $heading-color;
+      }
+    }
+
+
+  }
+
+  &.testimonial-tow{
+    @include media_991(min){
+      --p-space : 60px
+    }
+    @include media_991(){
+      --p-space : 0
+    }
+    .testimonial-item {
+      position: relative;
+      padding:0 var(--p-space);
+
+      &:after,&:before{
+        position: absolute;
+        font-size: 130px;
+        height: 40px;
+        line-height: 105px;
+        opacity: 0.1;
+      }
+      &:before {
+        content: "\201C";
+        left: 0;
+      }
+      &:after {
+        content: "\201D";
+        right: 0;
+        bottom:0;
+      }
+    }
+    p{
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+    .auth-info{
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      span{
+        color: $body-color;
+        display: block;
+        letter-spacing: 0.3px;
+        text-transform: initial;
+      }
+    }
+  }
+
+  .control-nav{
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    margin-left: var(--p-space);
+    margin-top: 20px;
+    svg{
+      cursor: pointer;
+    }
+  }
+
+}
